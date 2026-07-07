@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { fetchProperty } from "@/lib/api";
 import type { Property } from "@/lib/types";
+import VerifyPropertyButton from "@/components/VerifyPropertyButton";
 
 function formatPrice(price: number) {
   return new Intl.NumberFormat("en-US", {
@@ -70,6 +71,20 @@ export default function PropertyDetailPage() {
             </p>
           </div>
 
+          <div className="md:col-span-2">
+            <div className="rounded-xl border border-slate-200 bg-white p-5">
+              <h2 className="font-semibold text-slate-900">
+                Property Verification
+              </h2>
+              <p className="text-sm text-slate-500 mt-1">
+                Record a SHA-256 hash of this property address on Polygon Amoy
+                as an immutable proof of listing.
+              </p>
+              <div className="mt-4">
+                <VerifyPropertyButton propertyId={property.id} />
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
