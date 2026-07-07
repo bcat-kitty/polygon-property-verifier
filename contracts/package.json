@@ -1,0 +1,24 @@
+{
+  "name": "property-verifier-contracts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PropertyVerifier smart contract that records property address hashes on Polygon.",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:amoy": "hardhat run scripts/deploy.ts --network amoy",
+    "export-abi": "ts-node scripts/exportAbi.ts",
+    "postcompile": "ts-node scripts/exportAbi.ts"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.0",
+    "chai": "^4.3.10",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
